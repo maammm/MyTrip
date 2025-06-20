@@ -1,0 +1,552 @@
+/* style.css */
+/* Skema Warna Natural (Hijau) untuk Kenyamanan Visual */
+
+/* --- Reset dan Pengaturan Dasar --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header Utama --- */
+.main-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/selecta.jpeg') no-repeat center center/cover;
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 5px solid #20c997;
+    position: relative; /* Tambahkan baris ini */
+    overflow: hidden; /* Tambahkan baris ini untuk merapikan efek */
+}
+
+/* --- Animasi Gradien Pelangi untuk Header --- */
+
+/* Membuat lapisan di atas background header */
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* Membuat gradien pelangi yang sangat besar */
+    background: linear-gradient(
+        -45deg, 
+        #ee7752, 
+        #e73c7e, 
+        #23a6d5, 
+        #23d5ab
+    );
+    background-size: 400% 400%;
+    
+    /* Menerapkan animasi */
+    animation: gradientAnimation 15s ease infinite;
+    
+    /* Atur transparansi agar gambar di belakangnya tetap terlihat */
+    opacity: 0.6;
+    
+    /* Posisikan lapisan cahaya di belakang teks header */
+    z-index: 0;
+}
+
+/* Mengatur agar teks header tetap di depan lapisan cahaya */
+.main-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mendefinisikan gerakan animasinya */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.main-header p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* --- Navigasi --- */
+.main-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.main-nav a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: #20c997; /* Aksen Hijau */
+    color: #fff;
+}
+
+/* --- Wrapper Konten Utama --- */
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.main-content {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+/* --- Kartu Artikel --- */
+.post-card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 30px;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.post-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 25px;
+}
+
+.post-title {
+    margin: 0 0 15px 0;
+    font-size: 1.8rem;
+    color: #004d40; /* Hijau Gelap */
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #20c997; /* Aksen Hijau */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background-color: #1baa80; /* Aksen Hijau lebih gelap */
+}
+
+/* --- Sidebar Widgets --- */
+.widget {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.widget-title {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #004d40; /* Hijau Gelap */
+    border-bottom: 2px solid #20c997; /* Aksen Hijau */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Form Pencarian --- */
+.search-form {
+    display: flex;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #20c997; /* Aksen Hijau */
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #1baa80; /* Aksen Hijau lebih gelap */
+}
+
+/* --- Daftar Kategori --- */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.category-list li:last-child a {
+    border-bottom: none;
+}
+.category-list a:hover {
+    color: #20c997; /* Aksen Hijau */
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #004d40; /* Hijau Gelap */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 30px;
+}
+
+/* --- Responsif untuk Layar Kecil --- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- STYLE UNTUK HALAMAN DETAIL --- */
+
+.post-detail {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.post-detail-title {
+    font-size: 2.5rem;
+    color: #004d40;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.post-detail-meta {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.post-detail-category {
+    display: inline-block;
+    background-color: #20c997;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.post-detail-image {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.post-detail-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+.post-detail-content h2,
+.post-detail-content h3 {
+    color: #004d40;
+}
+
+.post-detail-content p {
+    margin-bottom: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #6c757d;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* --- Style untuk Kotak Artikel Terkait --- */
+.related-articles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.related-article-box {
+    display: block;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.related-article-box:hover {
+    border-color: #20c997;
+    background-color: #f8f9fa;
+    color: #004d40;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transform: translateY(-2px);
+}
+
+.related-articles-list li:last-child a {
+    border-bottom: none;
+}
+
+.related-articles-list li a:hover {
+    color: #20c997;
+}
+
+/* Tambahkan kode ini ke dalam style.css */
+
+.post-detail-meta {
+    font-size: 0.9em;
+    color: #6c757d; /* Warna abu-abu yang soft */
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0; /* Garis pemisah tipis */
+}
+
+.post-detail-meta strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* ... Aturan .post-card yang sudah ada ... */
+
+/* Style Khusus untuk Artikel Utama di Homepage */
+.featured-post .post-image {
+    height: 400px; /* Buat gambar lebih tinggi */
+}
+
+.featured-post .post-title {
+    font-size: 2.2rem; /* Buat judul lebih besar */
+}
+
+/* --- Style untuk Grid Artikel di Bawahnya (Versi Flexbox) --- */
+.post-grid {
+    display: flex;
+    flex-wrap: wrap; /* Izinkan item untuk pindah ke baris baru */
+    gap: 30px; /* Jarak antar kartu */
+    margin-top: 30px;
+}
+
+/* Atur lebar setiap kartu di dalam grid */
+.post-grid .post-card {
+    /* Tiap kartu akan mengisi ruang fleksibel, dengan basis lebar 48% */
+    /* Kalkulasi ini penting agar 'gap' bisa berfungsi dengan benar */
+    flex: 1 1 calc(50% - 15px); 
+    box-sizing: border-box; /* Pastikan padding & border tidak merusak lebar */
+}
+
+/* Sesuaikan ukuran kartu di dalam grid agar tidak terlalu besar */
+.post-grid .post-card .post-image {
+    height: 200px; /* Perkecil tinggi gambar */
+}
+
+.post-grid .post-card .post-title {
+    font-size: 1.4rem; /* Perkecil font judul */
+    line-height: 1.4;
+}
+
+.post-grid .post-card .post-content {
+    padding: 20px; /* Perkecil padding konten */
+}
+
+/* --- STYLE UNTUK HALAMAN STATIS (TENTANG & KONTAK) --- */
+
+.static-page {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.page-header {
+    border-bottom: 2px solid #20c997;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #004d40;
+}
+
+.static-page-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.static-page h3 {
+    color: #004d40;
+    margin-top: 30px;
+}
+
+.static-page ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* --- STYLE UNTUK FORM KONTAK --- */
+.contact-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #34495e;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #20c997;
+    box-shadow: 0 0 5px rgba(32, 201, 151, 0.5);
+}
+
+.button-primary {
+    background-color: #20c997;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-primary:hover {
+    background-color: #1baa80;
+}
+
+/* --- STYLE UNTUK NOTIFIKASI FORM --- */
+
+.notification {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+.notification.success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.notification.error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
